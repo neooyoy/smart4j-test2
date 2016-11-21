@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.smart4j</groupId>
+    <groupId>org.smart4j.chapter3</groupId>
     <artifactId>chapter3</artifactId>
     <version>1.0.0</version>
 
@@ -55,14 +55,14 @@
             </plugin>
 
             <!--test-->
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.10</version>
                 <configuration>
                     <skipTests>true</skipTests>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
 
         <resources>
@@ -71,10 +71,10 @@
                 <filtering>true</filtering>
             </resource>
 
-            <resource>
+          <!--  <resource>
                 <directory>${project.basedir}/src/test/resources/</directory>
                 <filtering>true</filtering>
-            </resource>
+            </resource>-->
         </resources>
 
     </build>
@@ -92,11 +92,6 @@
                 <jdbc.test.url>jdbc:mysql://localhost:3306/testCJ_test</jdbc.test.url>
                 <jdbc.test.username>root</jdbc.test.username>
                 <jdbc.test.password>123456</jdbc.test.password>
-
-
-                <smart.framework.app.base_package>org.smart4j.chapter3</smart.framework.app.base_package>
-                <smart.framework.app.jsp_path>/WEB-INF/view/</smart.framework.app.jsp_path>
-                <smart.framework.app.asset_apth>/asset/</smart.framework.app.asset_apth>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>

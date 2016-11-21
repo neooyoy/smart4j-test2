@@ -1,24 +1,23 @@
-package org.smart4j.chapter3.service;
+package org.smart4j.chapter3.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smart4j.chapter3.model.Customer;
-import org.smart4j.framework.annotation.Service;
+import org.smart4j.chapter3.service.CustomerService;
 
 import java.util.List;
 import java.util.Map;
 
-@Service
-public class CustomerService {
+public class CustomerServiceImpl {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
+   /* private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
 
     public List<Customer> getCustomerList() {
         String sql = "select * from customer";
         return org.smart4j.chapter3.helper.DatabaseHelper.queryEntityList(org.smart4j.chapter3.model.Customer.class, sql);
     }
 
-    public Customer getCustomer(int id) {
+    public org.smart4j.chapter3.model.Customer getCustomer(int id) {
         String sql = "select * from customer where id=?";
         return org.smart4j.chapter3.helper.DatabaseHelper.queryEntity(org.smart4j.chapter3.model.Customer.class, sql, id);
     }
@@ -33,6 +32,5 @@ public class CustomerService {
 
     public boolean deleteCustomer(int id) {
         return org.smart4j.chapter3.helper.DatabaseHelper.deleteEntity(org.smart4j.chapter3.model.Customer.class, id);
-    }
-
+    }*/
 }

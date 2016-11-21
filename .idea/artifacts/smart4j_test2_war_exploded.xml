@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="smart4j-test2:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="smart4j-test2:war exploded">
     <output-path>$PROJECT_DIR$/target/chapter3-1.0.0</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
@@ -7,7 +7,9 @@
           <element id="module-output" name="smart4j-test2" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.smart4j:smart4j-framework:1.0.0" />
+          <element id="archive" name="smart4j-framework-1.0.0.jar">
+            <element id="module-output" name="smart4j-framework" />
+          </element>
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.13" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.13" />
