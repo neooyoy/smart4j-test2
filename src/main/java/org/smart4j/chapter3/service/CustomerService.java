@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smart4j.chapter3.model.Customer;
 import org.smart4j.framework.annotation.Service;
+import org.smart4j.framework.annotation.Transaction;
+import org.smart4j.framework.helper.DatabaseHelper;
 
 import java.util.List;
 import java.util.Map;
@@ -15,24 +17,27 @@ public class CustomerService {
 
     public List<Customer> getCustomerList() {
         String sql = "select * from customer";
-        return org.smart4j.chapter3.helper.DatabaseHelper.queryEntityList(org.smart4j.chapter3.model.Customer.class, sql);
+        return DatabaseHelper.queryEntityList(org.smart4j.chapter3.model.Customer.class, sql);
     }
 
     public Customer getCustomer(int id) {
         String sql = "select * from customer where id=?";
-        return org.smart4j.chapter3.helper.DatabaseHelper.queryEntity(org.smart4j.chapter3.model.Customer.class, sql, id);
+        return DatabaseHelper.queryEntity(org.smart4j.chapter3.model.Customer.class, sql, id);
     }
 
+    @Transaction
     public boolean createCustomer(Map<String, Object> filedMap) {
-        return org.smart4j.chapter3.helper.DatabaseHelper.insertEntity(org.smart4j.chapter3.model.Customer.class, filedMap);
+        return DatabaseHelper.insertEntity(org.smart4j.chapter3.model.Customer.class, filedMap);
     }
 
+    @Transaction
     public boolean updateCustome(int id, Map<String, Object> fieldMap) {
-        return org.smart4j.chapter3.helper.DatabaseHelper.updateEntity(org.smart4j.chapter3.model.Customer.class, id, fieldMap);
+        return DatabaseHelper.updateEntity(org.smart4j.chapter3.model.Customer.class, id, fieldMap);
     }
 
+    @Transaction
     public boolean deleteCustomer(int id) {
-        return org.smart4j.chapter3.helper.DatabaseHelper.deleteEntity(org.smart4j.chapter3.model.Customer.class, id);
+        return DatabaseHelper.deleteEntity(org.smart4j.chapter3.model.Customer.class, id);
     }
 
 }
