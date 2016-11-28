@@ -26,15 +26,13 @@ public class CustomerController {
      * 客户列表
      * @return
      */
-    @Action("get:customer")
-    public View customer(String test, Integer customerId) {
+    @Action("get:/customerList")
+    public View customerList() {
         View view = null;
         String path = "customer/customer.jsp";
         Map<String, Object> model = new HashMap<String, Object>();
         try {
-            List<Customer> customerList = new ArrayList<Customer>();
-            Customer customer = customerService.getCustomer(customerId);
-            customerList.add(customer);
+            List<Customer> customerList = customerService.getCustomerList();
             model.put("customerList", customerList);
             view = new View(model);
             view.setPath(path);
