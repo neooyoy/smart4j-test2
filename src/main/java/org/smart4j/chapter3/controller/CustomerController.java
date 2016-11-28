@@ -7,6 +7,7 @@ import org.smart4j.chapter3.service.CustomerService;
 import org.smart4j.framework.annotation.Action;
 import org.smart4j.framework.annotation.Controller;
 import org.smart4j.framework.annotation.Inject;
+import org.smart4j.framework.bean.Param;
 import org.smart4j.framework.bean.View;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class CustomerController {
      * @return
      */
     @Action("get:/customerList")
-    public View customerList() {
+    public View customerList(Param param) {
         View view = null;
         String path = "customer/customer.jsp";
         Map<String, Object> model = new HashMap<String, Object>();
